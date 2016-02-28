@@ -78,4 +78,6 @@ int main(){
 	fclose(f);
 	yyin = fopen("write.txt","r");
 	yylex();
+	if(remove("write.txt")!=0)
+		perror("Can't delete intermediate file!");
 }
